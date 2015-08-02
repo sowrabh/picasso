@@ -122,7 +122,7 @@ class BitmapHunter implements Runnable {
     MarkableInputStream markStream = new MarkableInputStream(stream);
     stream = markStream;
 
-    long mark = markStream.savePosition(65536); // TODO fix this crap.
+    long mark = markStream.savePosition(131072); // TODO fix this crap. Remove it once issue#364 in square/Picasso is fixed
 
     final BitmapFactory.Options options = RequestHandler.createBitmapOptions(request);
     final boolean calculateSize = RequestHandler.requiresInSampleSize(options);
